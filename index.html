@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
-    <header class="main-header flex flex-space-between main-layout">
-        <div class="logo-container"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
-        <ul class="clear-list flex">
-            <li>Gallery</li>
-            <li>About</li>
-        </ul>
+<body onload="onInit()">
+    <header class="main-header ">
+        <div class="header-container main-layout flex flex-space-between">
+
+
+            <div class="logo-container"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
+            <ul class="clear-list flex">
+                <li>Gallery</li>
+                <li>About</li>
+            </ul>
+        </div>
     </header>
 
     <nav class="main-nav main-layout flex">
@@ -31,10 +35,15 @@
         </div>
     </nav>
 
+    <section class="canvas-container">
+        <canvas id="canvas" height="500px" width="500px"></canvas>
+        <div class="canvas-editor">
+
+        </div>
+    </section>
+
     <main class="gallery-container flex main-layout">
-        <div><img src="./images/meme-imgs (square)/1.jpg" alt=""></div>
-        <div><img src="./images/meme-imgs (square)/2.jpg" alt=""></div>
-        <div><img src="./images/meme-imgs (square)/3.jpg" alt=""></div>
+        <div><img class="1" onclick="onImgSelect(1, this)" src="./images/meme-imgs/1.jpg" alt=""></div>
     </main>
 
     <footer class="main-footer flex flex-column flex-center">

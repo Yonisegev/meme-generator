@@ -21,6 +21,7 @@ img {
 
 .main-layout {
     width: 1200px;
+    margin: 0 auto;
 }
 
 /* HEADER */
@@ -30,6 +31,22 @@ img {
 }
 .logo-img {
     width: 135px;
+}
+
+/* GALLERY */
+.gallery-container {
+    margin: 0 auto;
+    width: 90vw;
+    height: 85vh;
+    background-color: lightslategray;
+}
+
+/* CANVAS */
+.canvas-container {
+    margin: 0 0;
+    width: 500px;
+    height: 500px;
+    background-color: mediumpurple;
 }
 
 /* FOOTER */
