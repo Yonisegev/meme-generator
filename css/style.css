@@ -31,6 +31,15 @@ button {
     cursor: pointer;
 }
 
+select {
+    background-color: white;
+    border: thin solid white;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+}
+
 /* FONTS */
 @font-face {
     font-family: OpenSansLight;
@@ -55,7 +64,7 @@ button {
 /* LAYOUT  */
 
 .main-layout {
-    width: 1200px;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -75,7 +84,7 @@ button {
 }
 
 .header-container ul:first-of-type {
-    flex-grow: 0.02;
+    flex-grow: 0.15
 }
 
 .header-container ul:first-of-type li {
@@ -99,12 +108,16 @@ button {
     height: 100px;
     background-color: #ffffff;
     align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
 }
+
 
 .main-nav .input-container {
     border-bottom: 2px solid black;
-    margin-left: 1.25rem;
-    width: 200px
+    width: 170px;
+    margin-bottom: 5px;
 }
 
 .main-nav .input-container span {
@@ -129,25 +142,19 @@ button {
     margin-left: 30px;
 }
 
-
-
-
-
-
-/* GALLERY */
-.gallery-container {
-    margin: 0 auto;
-    width: 90vw;
-    height: 85vh;
-    background-color: lightslategray;
-}
-
 /* CANVAS */
+
+
 .canvas-container {
-    margin: 0 0;
     width: 500px;
     height: 500px;
-    background-color: mediumpurple;
+    background-color: antiquewhite;
+    margin: 15px auto 15px auto;
+
+}
+
+.editor-container {
+    flex-direction: column;
 }
 
 /* CANVAS EDITOR */
@@ -155,6 +162,9 @@ button {
 .canvas-editor {
     width: 100%;
     align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+
 }
 .canvas-editor .text-input {
     height: 60px;
@@ -162,20 +172,79 @@ button {
     padding-left: 10px;
     font-size: 25px;
     border: none;
-    border-radius: 12px;
+    border-radius: 4px;
     margin: 15px 0px 10px 0px;
 }
 
 .canvas-editor .buttons-container {
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.canvas-editor .buttons-container button {
+    background-color: antiquewhite;
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+.canvas-editor .buttons-container .third-row {
+    margin-bottom: 10px;
+}
+
+.canvas-editor .buttons-container .font-select {
+    appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+    width: 8rem;
+}
+
+/* GALLERY */
+.gallery-container {
+    justify-content: center;
+    align-content: center;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 50%));
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    row-gap: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.gallery-container > * {
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.gallery-container img {
+    cursor: pointer;
 }
 
 /* FOOTER */
-nav .main-footer {
-    height: 200px;
-    background-color: #ffffff;
+.main-footer {
+    height: 90px;
+    background-color: #ff7f00;
+    
 }
+
 
 /* HELPERS */
 .flex {
@@ -201,4 +270,62 @@ nav .main-footer {
 
 .clear-list {
     list-style-type: none;
+}
+
+@media (min-width: 812px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
+
+    }
+
+    .main-nav {
+        flex-direction: row;
+        justify-content: flex-start;
+
+    }
+
+    .main-nav .input-container {
+        width: 222px;
+        margin-left: 1.25rem;
+    }
+
+    .header-container ul:first-of-type {
+    flex-grow: 0.05
+}
+
+
+}
+
+@media (min-width: 914px) {
+
+    .main-nav .input-container {
+        width: 210px;
+    }
+
+    .editor-container {
+        flex-direction: row;
+    }
+
+
+
+    .canvas-container {
+        margin-left: 50px;
+        margin-top: 0;
+    }
+}
+
+
+@media (min-width: 1095px) {
+
+    .main-layout {
+        width: 99vw !important;
+    }
+    .editor-container {
+        flex-direction: row;
+    }
+
+        .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 500px));
+    }
+
 }

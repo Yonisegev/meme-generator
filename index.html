@@ -50,8 +50,8 @@
             <div class="buttons-container">
                 <div class="first-row">
                     <button onclick="onChangeLine()"><i class="fas fa-exchange-alt fa-4x change-line"></i></button>
-                    <button onclick="onAddLine()"><i class="far fa-comment-alt fa-4x new-line"></i></button>
                     <button><i class="far fa-trash-alt fa-4x delete"></i></button>
+                    <button onclick="onAddLine()"><i class="far fa-comment-alt fa-4x new-line"></i></button>
                 </div>
                 <div class="second-row">
                     <button onclick="onChangeFontSize('+')"><i class="far fa-plus-square fa-4x font-plus"></i></button>
@@ -62,14 +62,15 @@
                     <button><i class="fas fa-align-right fa-4x align-right"></i></button>
                 </div>
                 <div class="third-row">
+                    <button onclick="onChangeTextPosY('+')"><i class="fas fa-arrow-up fa-4x move-up"></i></button>
+                    <button onclick="onChangeTextPosY('-')"><i class="fas fa-arrow-down fa-4x move-down"></i></button>
+                    <button><i class="fas fa-palette fa-4x"></i></button>
+                </div>
+                <div class="fourth-row">
                     <select name="font-select" id="font-select" class="font-select">
                         <option value="Impact">Impact</option>
                         <option value="SuezOne">Suez One</option>
                     </select>
-                    <button onclick="onChangeTextPosY('+')"><i class="fas fa-arrow-up fa-4x move-up"></i></button>
-                    <button onclick="onChangeTextPosY('-')"><i class="fas fa-arrow-down fa-4x move-down"></i></button>
-
-
                 </div>
 
 
@@ -77,8 +78,8 @@
         </div>
     </section>
 
-    <main class="gallery-container flex main-layout">
-        <div><img class="1" onclick="onImgSelect(1, this)" src="./images/meme-imgs/1.jpg" alt=""></div>
+    <main class="gallery-container main-layout">
+
     </main>
 
     <footer class="main-footer flex flex-column flex-center main-layout">

@@ -7,13 +7,20 @@ function onInit() {
     clearTextInput();
 }
 
+
 function drawImg() {
     let imgData = getImgData();
     let img = new Image();
     img.src = `./images/meme-imgs/${imgData.selectedImgId}.jpg`;
     img.onload = () => {
         resizeCanvas(img)
-        gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height)
+        const screenWidth = document.body.clientWidth;
+        if (screenWidth <= 515) {
+            gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), 350, 350)
+        } else {
+            gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height)
+        }
+
     }
 }
 
