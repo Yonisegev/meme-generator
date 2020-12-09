@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator - Yoni Segev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body onload="onInit()">
     <header class="main-header ">
-        <div class="header-container main-layout flex flex-space-between">
+        <div class="header-container main-layout flex">
 
 
             <div class="logo-container"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
             <ul class="clear-list flex">
                 <li>Gallery</li>
+                <li class="header-line">|</li>
                 <li>About</li>
             </ul>
         </div>
     </header>
 
     <nav class="main-nav main-layout flex">
-        <input type="search" name="search" id="search" placeholder="Enter search keyword">
+        <div class="input-container">
+            <input type="search" name="search" id="search" placeholder="Enter search keyword"><span><i
+                    class="fas fa-search"></i></span>
+        </div>
         <div class="nav-keywords-container">
             <ul class="keywords-list flex clear-list">
                 <li>funny</li>
@@ -35,17 +40,39 @@
         </div>
     </nav>
 
-    <section class="canvas-container flex">
-        <canvas id="canvas" height="500px" width="500px"></canvas>
-        <div class="canvas-editor">
-            <input oninput="onUpdateCanvasText(this)" type="text" name="text" id="text" placeholder="Your text here">
+    <section class="editor-container flex main-layout">
+        <div class="canvas-container">
+            <canvas id="canvas" height="500px" width="500px"></canvas>
+        </div>
+        <div class="canvas-editor flex flex-column">
+            <input oninput="onUpdateCanvasText(this)" class="text-input" type="text" name="text" id="text"
+                placeholder="Your text here">
             <div class="buttons-container">
-                <button onclick="onChangeFontSize('+')">A+</button>
-                <button onclick="onChangeFontSize('-')">A-</button>
-                <button onclick="onChangeTextPosY('+')">⬆</button>
-                <button onclick="onChangeTextPosY('-')">⬇</button>
-                <button onclick="onAddLine()">🆕</button>
-                <button onclick="onChangeLine()">🔃</button>
+                <div class="first-row">
+                    <button onclick="onChangeLine()"><i class="fas fa-exchange-alt fa-4x change-line"></i></button>
+                    <button onclick="onAddLine()"><i class="far fa-comment-alt fa-4x new-line"></i></button>
+                    <button><i class="far fa-trash-alt fa-4x delete"></i></button>
+                </div>
+                <div class="second-row">
+                    <button onclick="onChangeFontSize('+')"><i class="far fa-plus-square fa-4x font-plus"></i></button>
+                    <button onclick="onChangeFontSize('-')"><i
+                            class="far fa-minus-square fa-4x font-minus"></i></button>
+                    <button><i class="fas fa-align-left fa-4x align-left"></i></button>
+                    <button><i class="fas fa-align-center fa-4x align-center"></i></button>
+                    <button><i class="fas fa-align-right fa-4x align-right"></i></button>
+                </div>
+                <div class="third-row">
+                    <select name="font-select" id="font-select" class="font-select">
+                        <option value="Impact">Impact</option>
+                        <option value="SuezOne">Suez One</option>
+                    </select>
+                    <button onclick="onChangeTextPosY('+')"><i class="fas fa-arrow-up fa-4x move-up"></i></button>
+                    <button onclick="onChangeTextPosY('-')"><i class="fas fa-arrow-down fa-4x move-down"></i></button>
+
+
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -54,7 +81,7 @@
         <div><img class="1" onclick="onImgSelect(1, this)" src="./images/meme-imgs/1.jpg" alt=""></div>
     </main>
 
-    <footer class="main-footer flex flex-column flex-center">
+    <footer class="main-footer flex flex-column flex-center main-layout">
         <div class="footer-logo"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
         <p>All Rights Reserved 2020</p>
     </footer>

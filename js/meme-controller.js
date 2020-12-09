@@ -70,6 +70,7 @@ function drawAllText() {
 }
 
 function drawText(txt, x = 250, y = 80, size) {
+
     gCtx.lineWidth = '1'
     gCtx.font = `700 ${size}px impact`
     gCtx.textAlign = 'center';

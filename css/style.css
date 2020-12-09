@@ -5,16 +5,51 @@
 }
 
 html {
-    
+    font-family: OpenSansRegular;
 
 }
 
 body {
     background-color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+a, a:focus, a:visited a:active {
+
+    color: initial;
 }
 
 img {
     width: 100%;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* FONTS */
+@font-face {
+    font-family: OpenSansLight;
+    src: url(../fonts/Open_Sans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: OpenSansBold;
+    src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: SuezOne; 
+    src: url(../fonts/Suez_One/SuezOne-Regular.ttf);
 }
 
 /* LAYOUT  */
@@ -26,12 +61,78 @@ img {
 
 /* HEADER */
 .main-header {
-    height: 4.375rem;
-    background-color: antiquewhite;
+    height: 3.375rem;
 }
+
+.header-container {
+    height: 100%;
+    background-color: #ff7f00;
+    align-items: center;
+}
+
+.header-container .logo-container .logo-img, ul li:not(.header-line){
+    cursor: pointer;
+}
+
+.header-container ul:first-of-type {
+    flex-grow: 0.02;
+}
+
+.header-container ul:first-of-type li {
+    flex-grow: 0.1;
+}
+
+
+.logo-container {
+    flex-grow: 1;
+    user-select: none;
+    margin-left: 10px;
+}
+
+
 .logo-img {
     width: 135px;
 }
+
+/* NAV */
+.main-nav {
+    height: 100px;
+    background-color: #ffffff;
+    align-items: center;
+}
+
+.main-nav .input-container {
+    border-bottom: 2px solid black;
+    margin-left: 1.25rem;
+    width: 200px
+}
+
+.main-nav .input-container span {
+    cursor: pointer;
+}
+
+
+.main-nav input {
+    border: none;
+    padding: 2px 5px;
+}
+
+.main-nav .nav-keywords-container {
+    width: 100%;
+}
+
+.main-nav .keywords-list {
+    justify-content: center;
+}
+
+.main-nav .nav-keywords-container .keywords-list > *{
+    margin-left: 30px;
+}
+
+
+
+
+
 
 /* GALLERY */
 .gallery-container {
@@ -49,14 +150,40 @@ img {
     background-color: mediumpurple;
 }
 
+/* CANVAS EDITOR */
+
+.canvas-editor {
+    width: 100%;
+    align-items: center;
+}
+.canvas-editor .text-input {
+    height: 60px;
+    width: 23.125rem;
+    padding-left: 10px;
+    font-size: 25px;
+    border: none;
+    border-radius: 12px;
+    margin: 15px 0px 10px 0px;
+}
+
+.canvas-editor .buttons-container {
+display: flex;
+flex-direction: column;
+}
+
 /* FOOTER */
-.main-footer {
+nav .main-footer {
     height: 200px;
+    background-color: #ffffff;
 }
 
 /* HELPERS */
 .flex {
     display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
 }
 
 .flex-column {
