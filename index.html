@@ -26,7 +26,7 @@
         <div class="nav-keywords-container">
             <ul class="keywords-list flex clear-list">
                 <li>funny</li>
-                <li>comics</li>
+                <li>politics</li>
                 <li>dogs</li>
                 <li>cats</li>
                 <li>tv</li>
@@ -39,6 +39,10 @@
         <canvas id="canvas" height="500px" width="500px"></canvas>
         <div class="canvas-editor">
             <input oninput="onUpdateCanvasText(this)" type="text" name="text" id="text" placeholder="Your text here">
+            <div class="buttons-container">
+                <button onclick="onChangeFontSize('+')">A+</button>
+                <button onclick="onChangeFontSize('-')">A-</button>
+            </div>
         </div>
     </section>
 

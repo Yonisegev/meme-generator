@@ -24,6 +24,11 @@ gMeme = {
     ]
 }
 
+function changeFontSize(diff) {
+    let currLineIdx = getCurrLineIndex()
+    gMeme.lines[currLineIdx].size += diff;
+}
+
 function doUpdateImgTxt(txt) {
     let currLineIdx = getCurrLineIndex();
     gMeme.lines[currLineIdx].txt = txt;
