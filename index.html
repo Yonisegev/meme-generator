@@ -35,10 +35,10 @@
         </div>
     </nav>
 
-    <section class="canvas-container">
+    <section class="canvas-container flex">
         <canvas id="canvas" height="500px" width="500px"></canvas>
         <div class="canvas-editor">
-
+            <input oninput="onUpdateCanvasText(this)" type="text" name="text" id="text" placeholder="Your text here">
         </div>
     </section>
 
@@ -50,6 +50,8 @@
         <div class="footer-logo"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
         <p>All Rights Reserved 2020</p>
     </footer>
+    <script src="./js/gallery-controller.js"></script>
+    <script src="./js/gallery-service.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/meme-service.js"></script>
     <script src="./js/meme-controller.js"></script>

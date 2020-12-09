@@ -10,12 +10,6 @@ const gKeywords = {
 
 }
 
-const gImgs = [
-    {
-        id: 1,
-        keywords: ['funny'],
-    }
-]
 
 gMeme = {
     selectedImgId: 1,
@@ -26,10 +20,17 @@ gMeme = {
             size: 20,
             align: 'left',
             color: 'red',
-            imgWidth: null,
-            imgHeight: null,
         }
     ]
+}
+
+function doUpdateImgTxt(txt) {
+    let currLineIdx = getCurrLineIndex();
+    gMeme.lines[currLineIdx].txt = txt;
+}
+
+function getCurrLineIndex() {
+    return gMeme.selectedLineIdx;
 }
 
 
