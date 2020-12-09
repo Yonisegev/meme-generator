@@ -9,7 +9,38 @@
 </head>
 
 <body>
+    <header class="main-header flex flex-space-between main-layout">
+        <div class="logo-container"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
+        <ul class="clear-list flex">
+            <li>Gallery</li>
+            <li>About</li>
+        </ul>
+    </header>
 
+    <nav class="main-nav main-layout flex">
+        <input type="search" name="search" id="search" placeholder="Enter search keyword">
+        <div class="nav-keywords-container">
+            <ul class="keywords-list flex clear-list">
+                <li>funny</li>
+                <li>comics</li>
+                <li>dogs</li>
+                <li>cats</li>
+                <li>tv</li>
+                <a href="#">more...</a>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="gallery-container flex main-layout">
+        <div><img src="./images/meme-imgs (square)/1.jpg" alt=""></div>
+        <div><img src="./images/meme-imgs (square)/2.jpg" alt=""></div>
+        <div><img src="./images/meme-imgs (square)/3.jpg" alt=""></div>
+    </main>
+
+    <footer class="main-footer flex flex-column flex-center">
+        <div class="footer-logo"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
+        <p>All Rights Reserved 2020</p>
+    </footer>
     <script src="./js/utils.js"></script>
     <script src="./js/meme-service.js"></script>
     <script src="./js/meme-controller.js"></script>

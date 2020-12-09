@@ -5,9 +5,56 @@
 }
 
 html {
+    
 
 }
 
 body {
-    
+    background-color: antiquewhite;
+}
+
+img {
+    width: 100%;
+}
+
+/* LAYOUT  */
+
+.main-layout {
+    width: 1200px;
+}
+
+/* HEADER */
+.main-header {
+    height: 4.375rem;
+    background-color: antiquewhite;
+}
+.logo-img {
+    width: 135px;
+}
+
+/* FOOTER */
+.main-footer {
+    height: 200px;
+}
+
+/* HELPERS */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.clear-list {
+    list-style-type: none;
 }
