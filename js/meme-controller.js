@@ -9,7 +9,7 @@ function onInit() {
 function drawImg() {
     let imgData = getImgData();
     let img = new Image();
-    img.src = `../images/meme-imgs/${imgData.selectedImgId}.jpg`;
+    img.src = `./images/meme-imgs/${imgData.selectedImgId}.jpg`;
     img.onload = () => {
         resizeCanvas(img)
         gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height)
@@ -29,23 +29,29 @@ function onChangeFontSize(diff) {
 
 }
 
+function onChangeTextPosY(diff) {
+    if (diff === '-') changeTextPosY(+10)
+    else changeTextPosY(-10);
+    drawAllText();
+}
+
 function drawAllText() {
     let imgData = getImgData();
     let img = new Image()
     const textLines = imgData.lines;
-    img.src = `../images/meme-imgs/${imgData.selectedImgId}.jpg`;
+    img.src = `./images/meme-imgs/${imgData.selectedImgId}.jpg`;
     img.onload = () => {
         resizeCanvas(img)
         gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height)
         textLines.forEach((line) => {
-            drawText(line.txt, 250, 80, line.size)
+            drawText(line.txt, line.x, line.y, line.size)
         })
     }
 }
 
-function drawText(txt, x, y, size) {
+function drawText(txt, x = 250, y = 80, size) {
     gCtx.lineWidth = '1'
-    gCtx.font = `${size}px impact`
+    gCtx.font = `700 ${size}px impact`
     gCtx.textAlign = 'center';
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = 'white'

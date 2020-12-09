@@ -17,11 +17,23 @@ gMeme = {
     lines: [
         {
             txt: 'I never eat Falafel',
-            size: 20,
+            size: 40,
             align: 'left',
             color: 'red',
+            x: 250,
+            y: 80,
         }
     ]
+}
+
+function changeTextPosY(diff) {
+    let currLineIdx = getCurrLineIndex();
+    if (gMeme.lines[currLineIdx].y < 40) {
+        gMeme.lines[currLineIdx].y = 41;
+    } else if (gMeme.lines[currLineIdx].y >= 500) {
+        gMeme.lines[currLineIdx].y = 490;
+    }
+    gMeme.lines[currLineIdx].y += diff;
 }
 
 function changeFontSize(diff) {
