@@ -16,14 +16,49 @@ gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I never eat Falafel',
+            txt: '',
             size: 40,
             align: 'left',
             color: 'red',
             x: 250,
             y: 80,
         }
+        // {
+        //     txt: '',
+        //     size: 40,
+        //     align: 'left',
+        //     color: 'red',
+        //     x: 250,
+        //     y: 450,
+        // }
     ]
+}
+
+function createLine() {
+    var yAxis;
+    if (gMeme.lines.length === 0) yAxis = 80;
+    if (gMeme.lines.length === 1) yAxis = 450;
+    if (gMeme.lines.length > 1) yAxis = 250;
+    console.log(yAxis);
+
+    gMeme.lines.push(
+        {
+            txt: '',
+            size: 40,
+            align: 'left',
+            color: 'white',
+            x: 250,
+            y: yAxis
+        }
+    )
+}
+
+function changeLine() {
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) { // If it's the last line
+        gMeme.selectedLineIdx = 0;
+        return;
+    }
+    gMeme.selectedLineIdx++;
 }
 
 function changeTextPosY(diff) {

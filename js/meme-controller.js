@@ -4,6 +4,7 @@ var gCtx;
 
 function onInit() {
     renderGallery();
+    clearTextInput();
 }
 
 function drawImg() {
@@ -23,8 +24,8 @@ function onUpdateCanvasText(el) {
 }
 
 function onChangeFontSize(diff) {
-    if (diff === '-') changeFontSize(-1);
-    else changeFontSize(+1);
+    if (diff === '-') changeFontSize(-5);
+    else changeFontSize(+5);
     drawAllText();
 
 }
@@ -33,6 +34,25 @@ function onChangeTextPosY(diff) {
     if (diff === '-') changeTextPosY(+10)
     else changeTextPosY(-10);
     drawAllText();
+}
+
+function onAddLine() {
+    createLine();
+    changeLine();
+    clearTextInput();
+    document.querySelector('input[name="text"]').focus();
+
+}
+
+function onChangeLine() {
+    changeLine();
+    drawAllText();
+    document.querySelector('input[name="text"]').focus();
+    clearTextInput();
+}
+
+function clearTextInput() {
+    const elInput = document.querySelector('input[name="text"]').value = '';
 }
 
 function drawAllText() {
