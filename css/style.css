@@ -116,7 +116,7 @@ select {
 
 .main-nav .input-container {
     border-bottom: 2px solid black;
-    width: 170px;
+    width: 185px;
     margin-bottom: 5px;
 }
 
@@ -338,7 +338,7 @@ align-items: center;
 @media (min-width: 914px) {
 
     .main-nav .input-container {
-        width: 210px;
+        width: 230px;
     }
 
     .editor-container {

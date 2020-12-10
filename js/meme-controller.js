@@ -14,18 +14,18 @@ function drawImg() {
     img.src = `./images/meme-imgs/${imgData.selectedImgId}.jpg`;
     img.onload = () => {
         resizeCanvas(img);
-        const screenWidth = document.body.clientWidth;
-        if (screenWidth <= 515) {
-            gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), 350, 350);
-        } else {
-            gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height);
-        }
-
+        checkScreenSize(img);
     }
 }
 
+function onColorClick() {
+    const input = document.querySelector('.color-pal');
+    input.focus();
+    input.click();
+    input.addEventListener('input', () => changeColor(input.value))
 
 
+}
 function onUpdateCanvasText(el) {
     doUpdateImgTxt(el.value)
     drawAllText();
@@ -76,20 +76,20 @@ function drawAllText() {
     img.src = `./images/meme-imgs/${imgData.selectedImgId}.jpg`;
     img.onload = () => {
         resizeCanvas(img);
-        gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height);
+        checkScreenSize(img)
         textLines.forEach((line) => {
-            drawText(line.txt, line.x, line.y, line.size, line.align);
+            drawText(line.txt, line.x, line.y, line.size, line.align, line.color);
         })
     }
 }
 
-function drawText(txt, x = 250, y = 80, size, align) {
+function drawText(txt, x = 250, y = 80, size, align, color) {
 
     gCtx.lineWidth = '1';
     gCtx.font = `700 ${size}px impact`;
     gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
-    gCtx.fillStyle = 'white';
+    gCtx.fillStyle = color;
     gCtx.fillText(txt, x, y);
     gCtx.strokeText(txt, x, y);
 }
@@ -119,4 +119,25 @@ function onShowGallery() {
 function renderCanvas() {
     gCanvas = document.querySelector('#canvas');
     gCtx = gCanvas.getContext('2d');
+}
+
+function drawTextFromService() {
+    drawAllText();
+}
+
+function clearTextInputFromService() {
+    clearTextInput();
+}
+
+function checkScreenSize(img) {
+    const screenWidth = document.body.clientWidth;
+    const elContainer = document.querySelector('.canvas-container');
+    if (screenWidth <= 515) {
+        gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), 350, 350);
+        elContainer.style.width = 350 + 'px';
+        elContainer.style.height = 350 + 'px';
+
+    } else {
+        gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height);
+    }
 }

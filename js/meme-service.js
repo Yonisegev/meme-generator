@@ -19,7 +19,7 @@ gMeme = {
             txt: '',
             size: 40,
             align: 'center',
-            color: 'red',
+            color: 'white',
             x: 250,
             y: 80,
             align: 'center',
@@ -53,6 +53,11 @@ function createLine() {
             align: 'center',
         }
     )
+}
+
+function changeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color;
+    drawTextFromService()
 }
 
 function alignText(direction) {
@@ -97,8 +102,10 @@ function getImgData() {
 }
 
 function updateMemeData(id) {
-    gMeme.lines.splice(1); // Lines 100 to 102 are for whenever a user selects an images, writes on it, then goes back to gallery and selects another image.
+    gMeme.lines.splice(1); // Lines 100 to 103 are for whenever a user selects an images, writes on it, then goes back to gallery and selects another image.
     gMeme.lines[0].txt = '';
+    gMeme.lines[0].color = 'white';
     gMeme.selectedLineIdx = 0;
+    clearTextInputFromService();
     gMeme.selectedImgId = id;
 }
