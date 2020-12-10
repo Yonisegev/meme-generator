@@ -41,10 +41,16 @@
     </nav>
 
     <section class="editor-container flex main-layout hide">
+        <div class="narrow-back-btn" onclick="onShowGallery()">
+            <p class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
+        </div>
         <div class="canvas-container">
             <canvas id="canvas" height="500px" width="500px"></canvas>
         </div>
         <div class="canvas-editor flex flex-column">
+            <div class="wide-back-btn" onclick="onShowGallery()">
+                <p class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
+            </div>
             <input oninput="onUpdateCanvasText(this)" class="text-input" type="text" name="text" id="text"
                 placeholder="Your text here">
             <div class="buttons-container">

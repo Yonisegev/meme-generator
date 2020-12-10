@@ -24,6 +24,8 @@ function drawImg() {
     }
 }
 
+
+
 function onUpdateCanvasText(el) {
     doUpdateImgTxt(el.value)
     drawAllText();
@@ -100,6 +102,13 @@ function showEditor() {
     const elEditor = document.querySelector('.editor-container');
     elGallery.classList.add('hide');
     elEditor.classList.remove('hide');
+}
+
+function onShowGallery() {
+    const elGallery = document.querySelector('.gallery-container');
+    const elEditor = document.querySelector('.editor-container');
+    elGallery.classList.remove('hide');
+    elEditor.classList.add('hide');
 }
 
 function renderCanvas() {
