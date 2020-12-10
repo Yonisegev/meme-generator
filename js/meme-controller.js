@@ -123,12 +123,7 @@ function showEditor() {
     elEditor.classList.remove('hide');
 }
 
-function onShowGallery() {
-    const elGallery = document.querySelector('.gallery-container');
-    const elEditor = document.querySelector('.editor-container');
-    elGallery.classList.remove('hide');
-    elEditor.classList.add('hide');
-}
+
 
 function renderCanvas() {
     gCanvas = document.querySelector('#canvas');

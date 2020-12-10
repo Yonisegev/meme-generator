@@ -11,8 +11,7 @@ html {
 
 body {
     background-color: antiquewhite;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 
 }
 
@@ -103,6 +102,10 @@ select {
     width: 135px;
 }
 
+.gallery-link {
+    text-decoration: none;
+}
+
 /* NAV */
 .main-nav {
     height: 100px;
@@ -144,7 +147,7 @@ select {
 }
 
 .main-nav .nav-keywords-container .keywords-list > *, .more-keywords > *{
-    margin-left: 10px;
+    margin: 10px 0px 3px 10px;
     cursor: pointer;
 }
 
@@ -154,6 +157,10 @@ select {
     height: min-content;
     transition: opacity .2s ease-in-out;
     padding-right: 15px;
+}
+
+.more-keywords > * {
+    margin-bottom: 3px;
 }
 
 

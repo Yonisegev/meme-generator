@@ -15,9 +15,10 @@
         <div class="header-container main-layout flex">
 
 
-            <div class="logo-container"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
+            <div class="logo-container"><img onclick="onShowGallery()" class="logo-img" src="./images/LOGO.png"
+                    alt="Meme Generator"></div>
             <ul class="clear-list flex">
-                <li>Gallery</li>
+                <li><a href="#gallery" class="gallery-link">Gallery</a></li>
                 <li class="header-line">|</li>
                 <li>About</li>
             </ul>
@@ -84,7 +85,7 @@
         </div>
     </section>
 
-    <main class="gallery-container main-layout">
+    <main class="gallery-container main-layout" id="gallery">
 
     </main>
 
