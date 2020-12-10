@@ -18,6 +18,11 @@ function drawImg() {
     }
 }
 
+function onFontSelect(font) {
+    changeFont(font);
+    drawAllText();
+}
+
 function onColorClick() {
     const input = document.querySelector('.color-pal');
     input.focus();
@@ -66,7 +71,9 @@ function onChangeLine() {
 }
 
 function clearTextInput() {
-    const elInput = document.querySelector('input[name="text"]').value = '';
+    const elInput = document.querySelector('input[name="text"]');
+    elInput.value = '';
+    elInput.focus();
 }
 
 function drawAllText() {
@@ -78,15 +85,15 @@ function drawAllText() {
         resizeCanvas(img);
         checkScreenSize(img)
         textLines.forEach((line) => {
-            drawText(line.txt, line.x, line.y, line.size, line.align, line.color);
+            drawText(line.txt, line.x, line.y, line.size, line.align, line.color, line.font);
         })
     }
 }
 
-function drawText(txt, x = 250, y = 80, size, align, color) {
+function drawText(txt, x = 250, y = 80, size, align, color, font) {
 
     gCtx.lineWidth = '1';
-    gCtx.font = `700 ${size}px impact`;
+    gCtx.font = `700 ${size}px ${font}`;
     gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = color;
@@ -94,8 +101,14 @@ function drawText(txt, x = 250, y = 80, size, align, color) {
     gCtx.strokeText(txt, x, y);
 }
 
+function onDeleteLine() {
+    deleteLine();
+    clearTextInput();
+    drawAllText();
+}
 
 function onImgSelect(id) {
+    document.querySelector('.font-select').selectedIndex = 0; // Reset select input back to default.
     updateMemeData(id);
     renderCanvas();
     showEditor();

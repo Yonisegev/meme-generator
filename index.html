@@ -7,6 +7,7 @@
     <title>Meme Generator - Yoni Segev</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/doge.png" type="image/x-icon">
 </head>
 
 <body onload="onInit()">
@@ -56,7 +57,7 @@
             <div class="buttons-container">
                 <div class="first-row">
                     <button onclick="onChangeLine()"><i class="fas fa-exchange-alt fa-4x change-line"></i></button>
-                    <button><i class="far fa-trash-alt fa-4x delete"></i></button>
+                    <button onclick="onDeleteLine()"><i class="far fa-trash-alt fa-4x delete"></i></button>
                     <button onclick="onAddLine()"><i class="far fa-comment-alt fa-4x new-line"></i></button>
                 </div>
                 <div class="second-row">
@@ -74,7 +75,7 @@
                             class="hide color-pal"></button>
                 </div>
                 <div class="fourth-row">
-                    <select name="font-select" id="font-select" class="font-select">
+                    <select name="font-select" id="font-select" class="font-select" onchange="onFontSelect(this.value)">
                         <option value="Impact">Impact</option>
                         <option value="SuezOne">Suez One</option>
                     </select>

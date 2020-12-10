@@ -20,18 +20,11 @@ gMeme = {
             size: 40,
             align: 'center',
             color: 'white',
+            font: 'impact',
             x: 250,
             y: 80,
             align: 'center',
         }
-        // {
-        //     txt: '',
-        //     size: 40,
-        //     align: 'left',
-        //     color: 'red',
-        //     x: 250,
-        //     y: 450,
-        // }
     ]
 }
 
@@ -40,7 +33,6 @@ function createLine() {
     if (gMeme.lines.length === 0) yAxis = 80;
     if (gMeme.lines.length === 1) yAxis = 450;
     if (gMeme.lines.length > 1) yAxis = 250;
-    console.log(yAxis);
 
     gMeme.lines.push(
         {
@@ -48,11 +40,23 @@ function createLine() {
             size: 40,
             align: 'center',
             color: 'white',
+            font: 'impact',
             x: 250,
             y: yAxis,
             align: 'center',
         }
     )
+}
+
+function deleteLine() {
+    if (!gMeme.lines.length) return;
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    if (!gMeme.selectedLineIdx) return;
+    gMeme.selectedLineIdx--
+}
+
+function changeFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font;
 }
 
 function changeColor(color) {
@@ -89,6 +93,7 @@ function changeFontSize(diff) {
 
 function doUpdateImgTxt(txt) {
     let currLineIdx = getCurrLineIndex();
+    if (!gMeme.lines[0]) createLine();
     gMeme.lines[currLineIdx].txt = txt;
 }
 

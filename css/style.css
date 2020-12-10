@@ -297,6 +297,7 @@ align-items: center;
 .hide {
     visibility: hidden;
     opacity: 0;
+    max-width: 0;
     max-height: 0;
 }
 
@@ -304,6 +305,7 @@ align-items: center;
     visibility: visible;
     opacity: 1;
     max-height: initial;
+    max-width: initial;
 }
 
 @media (min-width: 812px) {
@@ -352,7 +354,7 @@ align-items: center;
     .wide-back-btn {
         display: block;
         width: 100%;
-        height: 30%;
+        height: 25%;
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
