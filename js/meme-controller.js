@@ -32,6 +32,11 @@ function onUpdateCanvasText(el) {
 
 }
 
+function onAlign(direction) {
+    alignText(direction);
+    drawAllText();
+}
+
 function onChangeFontSize(diff) {
     if (diff === '-') changeFontSize(-5);
     else changeFontSize(+5);
@@ -73,16 +78,16 @@ function drawAllText() {
         resizeCanvas(img);
         gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height);
         textLines.forEach((line) => {
-            drawText(line.txt, line.x, line.y, line.size);
+            drawText(line.txt, line.x, line.y, line.size, line.align);
         })
     }
 }
 
-function drawText(txt, x = 250, y = 80, size) {
+function drawText(txt, x = 250, y = 80, size, align) {
 
     gCtx.lineWidth = '1';
     gCtx.font = `700 ${size}px impact`;
-    gCtx.textAlign = 'center';
+    gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = 'white';
     gCtx.fillText(txt, x, y);

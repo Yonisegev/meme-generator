@@ -41,15 +41,15 @@
     </nav>
 
     <section class="editor-container flex main-layout hide">
-        <div class="narrow-back-btn" onclick="onShowGallery()">
-            <p class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
+        <div class="narrow-back-btn">
+            <p onclick="onShowGallery()" class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
         </div>
         <div class="canvas-container">
             <canvas id="canvas" height="500px" width="500px"></canvas>
         </div>
         <div class="canvas-editor flex flex-column">
-            <div class="wide-back-btn" onclick="onShowGallery()">
-                <p class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
+            <div class="wide-back-btn">
+                <p onclick="onShowGallery()" class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
             </div>
             <input oninput="onUpdateCanvasText(this)" class="text-input" type="text" name="text" id="text"
                 placeholder="Your text here">
@@ -63,9 +63,9 @@
                     <button onclick="onChangeFontSize('+')"><i class="far fa-plus-square fa-4x font-plus"></i></button>
                     <button onclick="onChangeFontSize('-')"><i
                             class="far fa-minus-square fa-4x font-minus"></i></button>
-                    <button><i class="fas fa-align-left fa-4x align-left"></i></button>
-                    <button><i class="fas fa-align-center fa-4x align-center"></i></button>
-                    <button><i class="fas fa-align-right fa-4x align-right"></i></button>
+                    <button onclick="onAlign('right')"><i class="fas fa-align-left fa-4x align-left"></i></button>
+                    <button onclick="onAlign('center')"><i class="fas fa-align-center fa-4x align-center"></i></button>
+                    <button onclick="onAlign('left')"><i class="fas fa-align-right fa-4x align-right"></i></button>
                 </div>
                 <div class="third-row">
                     <button onclick="onChangeTextPosY('+')"><i class="fas fa-arrow-up fa-4x move-up"></i></button>
