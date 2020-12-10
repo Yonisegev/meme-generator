@@ -5,6 +5,7 @@ var gCtx;
 function onInit() {
     renderGallery();
     clearTextInput();
+    renderKeywords();
 }
 
 
@@ -91,7 +92,6 @@ function drawAllText() {
 }
 
 function drawText(txt, x = 250, y = 80, size, align, color, font) {
-
     gCtx.lineWidth = '1';
     gCtx.font = `700 ${size}px ${font}`;
     gCtx.textAlign = align;
@@ -100,6 +100,7 @@ function drawText(txt, x = 250, y = 80, size, align, color, font) {
     gCtx.fillText(txt, x, y);
     gCtx.strokeText(txt, x, y);
 }
+
 
 function onDeleteLine() {
     deleteLine();

@@ -1,5 +1,7 @@
 'use strict';
 
+let gKeywords = [];
+
 const gImgs = [
     { id: 1, keywords: ['funny', 'politics', 'trump', 'donald'] },
     { id: 2, keywords: ['funny', 'dogs', 'cute', 'golden'] },
@@ -19,8 +21,62 @@ const gImgs = [
     { id: 16, keywords: ['tv', 'star', 'wars'] },
     { id: 17, keywords: ['russia', 'vladimir', 'putin', 'politics'] },
     { id: 18, keywords: ['tv', 'toy', 'story', 'funny'] },
-
 ]
+makeKeywords();
+
+function makeKeywords() {
+    gImgs.forEach(img => {
+        gKeywords.push(...img.keywords);
+    })
+}
+
+function filterKeywords() {
+    gKeywords = gKeywords.filter((keyword, idx) => { // Remove duplicates
+        return gKeywords.indexOf(keyword) === idx;
+    })
+}
+
+function getKeywords() {
+    filterKeywords();
+    return gKeywords;
+}
+
+const gKeywordsMap = {
+    'funny': 20,
+    'politics': 16,
+    'trump': 16,
+    'donald': 16,
+    'cute': 16,
+    'golden': 16,
+    'kids': 16,
+    'victory': 16,
+    'aliens': 16,
+    'science': 16,
+    'tell': 16,
+    'tv': 16,
+    'barack': 16,
+    'obama': 16,
+    'sports': 16,
+    'israel': 30,
+    'haim': 16,
+    'hect': 16,
+    'leonardo': 16,
+    'dicapario': 16,
+    'matrix': 24,
+    'lord of the rings': 16,
+    'star': 16,
+    'wars': 16,
+    'russia': 16,
+    'vladimir': 16,
+    'putin': 26,
+    'toy': 16,
+    'story': 16,
+    'comics': 12,
+    'dogs': 20,
+    'cats': 15,
+
+
+}
 
 function getImages() {
     return gImgs;

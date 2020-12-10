@@ -2,13 +2,7 @@
 
 var gMeme;
 
-const gKeywords = {
-    'funny': 10,
-    'comics': 5,
-    'dogs': 20,
-    'cats': 15,
 
-}
 
 
 gMeme = {

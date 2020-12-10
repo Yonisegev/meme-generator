@@ -113,6 +113,10 @@ select {
 
 }
 
+.main-nav-height { 
+    height: auto;
+}
+
 
 .main-nav .input-container {
     border-bottom: 2px solid black;
@@ -139,9 +143,20 @@ select {
     width: 100%;
 }
 
-.main-nav .nav-keywords-container .keywords-list > *{
+.main-nav .nav-keywords-container .keywords-list > *, .more-keywords > *{
     margin-left: 10px;
+    cursor: pointer;
 }
+
+.more-keywords {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: min-content;
+    transition: opacity .2s ease-in-out;
+    padding-right: 15px;
+}
+
+
 
 /* CANVAS */
 
