@@ -19,6 +19,14 @@ function drawImg() {
     }
 }
 
+function onSaveCanvas(elLink) {
+    const data = gCanvas.toDataURL();
+    console.log(data)
+    elLink.href = data;
+    elLink.download = 'my-meme.jpg';
+}
+
+
 function onFontSelect(font) {
     changeFont(font);
     drawAllText();

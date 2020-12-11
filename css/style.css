@@ -16,7 +16,7 @@ body {
 }
 
 a, a:focus, a:visited a:active {
-
+    cursor: pointer;
     color: initial;
 }
 
@@ -363,7 +363,7 @@ align-items: center;
 @media (min-width: 914px) {
 
     .main-nav .input-container {
-        width: 230px;
+        width: 220px;
     }
 
     .editor-container {
@@ -389,7 +389,7 @@ align-items: center;
 
     .canvas-container {
         margin-left: 50px;
-        margin-top: 0;
+        margin-top: 30px;
     }
 }
 

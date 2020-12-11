@@ -36,6 +36,7 @@ function renderKeywords() {
 }
 
 function onClickKeyword(keyword) {
+    document.querySelector('input[name="search"]').value = keyword;
     filterImagesToShow(keyword)
     updateKeywordMap(keyword)
     renderKeywords();
