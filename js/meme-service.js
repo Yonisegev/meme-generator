@@ -107,6 +107,10 @@ function getImgData() {
     return gMeme;
 }
 
+function getCurrText() {
+    return gMeme.lines[gMeme.selectedLineIdx].txt
+}
+
 function updateMemeData(id) {
     gMeme.lines.splice(1); // Lines 100 to 103 are for whenever a user selects an images, writes on it, then goes back to gallery and selects another image.
     gMeme.lines[0].txt = '';

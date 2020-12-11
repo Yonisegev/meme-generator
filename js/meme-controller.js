@@ -88,7 +88,8 @@ function onChangeLine() {
     changeLine();
     drawAllText();
     document.querySelector('input[name="text"]').focus();
-    clearTextInput();
+    let currText = getCurrText()
+    document.querySelector('.text-input').value = currText;
 }
 
 function clearTextInput() {
