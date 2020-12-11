@@ -19,6 +19,18 @@ function drawImg() {
     }
 }
 
+function uploadAndShare(elForm, ev) {
+    ev.preventDefault();
+    document.getElementById('imgData').value = gCanvas.toDataURL("image/jpeg");
+    function onSuccess(uploadedImgUrl) {
+        uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank"`)
+    }
+
+    doUploadImg(elForm, onSuccess);
+
+}
+
 function onSaveCanvas(elLink) {
     const data = gCanvas.toDataURL();
     console.log(data)
