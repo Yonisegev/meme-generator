@@ -14,12 +14,15 @@ function renderGallery() {
 function renderKeywords() {
     const elKeywordsList = document.querySelector('.keywords-list');
     const elMoreKeywords = document.querySelector('.more-keywords');
+    const elDataList = document.querySelector('.data-list');
     const keywords = getKeywords();
     let strHTMLs = '';
     let strMoreHTMLs = '';
+    let strDataListHTML = '';
     const fontSizes = getFontSize();
     keywords.forEach((keyword, i) => {
         if (fontSizes[i] > 50) fontSizes[i] = 50; // To avoid unlimited increase of font-size
+        strDataListHTML += `<option value="${keyword}"></option>`;
         if (i >= 5) {
             strMoreHTMLs += `<li onclick="onClickKeyword('${keyword}')" style="font-size:${fontSizes[i]}px">${keyword}</li>`
         } else {
@@ -29,6 +32,7 @@ function renderKeywords() {
     elKeywordsList.innerHTML = strHTMLs;
     elKeywordsList.innerHTML += '<a class="more-words-btn" onclick="onShowMore()" href="#">more...</a>'
     elMoreKeywords.innerHTML = strMoreHTMLs;
+    elDataList.innerHTML = strDataListHTML;
 }
 
 function onClickKeyword(keyword) {
@@ -54,4 +58,11 @@ function onShowGallery() {
     const elEditor = document.querySelector('.editor-container');
     elGallery.classList.remove('hide');
     elEditor.classList.add('hide');
+}
+
+function onKeywordSearch(ev) {
+    ev.preventDefault();
+    const elSearchInput = document.querySelector('input[name="search"]').value.toLowerCase().trim()
+    filterImagesToShow(elSearchInput);
+    renderGallery();
 }
