@@ -97,6 +97,10 @@ function drawText(txt, x = 250, y = 80, size, align, color, font) {
     gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = color;
+    if (isNarrow()) {
+        x = 175;
+
+    }
     gCtx.fillText(txt, x, y);
     gCtx.strokeText(txt, x, y);
 }
@@ -149,4 +153,10 @@ function checkScreenSize(img) {
     } else {
         gCtx.drawImage(img, (500 / 2) - (img.width / 2), (500 / 2) - (img.height / 2), img.width, img.height);
     }
+}
+
+
+function isNarrow() {
+    const screenWidth = document.body.clientWidth;
+    return screenWidth <= 515;
 }

@@ -24,9 +24,16 @@ gMeme = {
 
 function createLine() {
     var yAxis;
-    if (gMeme.lines.length === 0) yAxis = 80;
-    if (gMeme.lines.length === 1) yAxis = 450;
-    if (gMeme.lines.length > 1) yAxis = 250;
+    if (isNarrow()) { // If user is on mobile, change text positions on canvas
+        if (gMeme.lines.length === 0) yAxis = 80;
+        else if (gMeme.lines.length === 1) yAxis = 330;
+        else if (gMeme.lines.length > 1) yAxis = 175;
+    } else {
+        if (gMeme.lines.length === 0) yAxis = 80;
+        else if (gMeme.lines.length === 1) yAxis = 450;
+        else if (gMeme.lines.length > 1) yAxis = 250;
+
+    }
 
     gMeme.lines.push(
         {

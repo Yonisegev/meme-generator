@@ -102,10 +102,6 @@ select {
     width: 135px;
 }
 
-.gallery-link {
-    text-decoration: none;
-}
-
 /* NAV */
 .main-nav {
     height: 100px;
@@ -395,9 +391,6 @@ align-items: center;
 
 @media (min-width: 1095px) {
 
-    .main-layout {
-        width: 99vw !important;
-    }
     .editor-container {
         flex-direction: row;
     }
