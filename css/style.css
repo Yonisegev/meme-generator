@@ -109,7 +109,8 @@ select {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-
+    height: auto;
+    user-select: none;
 }
 
 .main-nav-height { 
@@ -134,12 +135,15 @@ select {
 }
 
 .main-nav .nav-keywords-container {
+    
     width: 100%;
 }
 
 .main-nav .keywords-list {
     justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .main-nav .nav-keywords-container .keywords-list > *, .more-keywords > *{
@@ -149,6 +153,7 @@ select {
 
 .more-keywords {
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     height: min-content;
     transition: opacity .2s ease-in-out;
@@ -335,7 +340,7 @@ align-items: center;
     .main-nav {
         flex-direction: row;
         justify-content: flex-start;
-
+        padding: 20px 0;
     }
 
     .main-nav .input-container {

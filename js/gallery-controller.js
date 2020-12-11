@@ -19,6 +19,7 @@ function renderKeywords() {
     let strMoreHTMLs = '';
     const fontSizes = getFontSize();
     keywords.forEach((keyword, i) => {
+        if (fontSizes[i] > 50) fontSizes[i] = 50; // To avoid unlimited increase of font-size
         if (i >= 5) {
             strMoreHTMLs += `<li onclick="onClickKeyword('${keyword}')" style="font-size:${fontSizes[i]}px">${keyword}</li>`
         } else {
@@ -32,6 +33,8 @@ function renderKeywords() {
 
 function onClickKeyword(keyword) {
     filterImagesToShow(keyword)
+    updateKeywordMap(keyword)
+    renderKeywords();
     renderGallery();
 }
 

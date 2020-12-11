@@ -61,6 +61,10 @@ const gImgs = [
 ]
 makeKeywords();
 
+function updateKeywordMap(keyword) {
+    ++gKeywordsMap[keyword]
+}
+
 function filterImagesToShow(keyword) {
     filteredImgs = [];
     gImgs.forEach(img => {
