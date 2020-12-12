@@ -19,6 +19,7 @@ body {
 a, a:focus, a:visited a:active {
     cursor: pointer;
     color: initial;
+    text-decoration: none;
 }
 
 img {
@@ -65,7 +66,6 @@ select {
 /* LAYOUT  */
 
 .main-layout {
-    width: 100vw;
     margin: 0 auto;
 }
 
@@ -94,6 +94,51 @@ select {
     flex-grow: 0.1;
 }
 
+body.opened .main-screen {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-tabs {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.main-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0 0 0 / 70%);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s;
+}
+
+.main-screen .narrow-nav-tabs {
+    height: 100%;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12.5rem
+}
+
+.main-screen .narrow-nav-tabs li {
+    margin-bottom: 0.5rem;
+    z-index: 100;
+}
+
+.main-screen .narrow-nav-tabs a {
+    font-size: 5rem;
+    color: #ffffff;
+    transition: color .2s;
+}
+
+.narrow-nav-tabs li:hover a {
+    color: #ff7f00;
+}
 
 .logo-container {
     flex-grow: 1;
@@ -183,6 +228,58 @@ select {
 }
 
 
+/* HAMBURGER MENU */
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    outline: none;
+    /* visibility: hidden;
+    opacity: 0;
+    width: 0; */
+}
+
+.line {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
 
 /* CANVAS */
 
@@ -393,9 +490,23 @@ align-items: center;
         margin-left: 1.25rem;
     }
 
+    .menu {
+        visibility: hidden;
+        opacity: 0;
+        max-width: 0;
+        max-height: 0;
+    }
+
+    .nav-tabs {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+
     .header-container ul:first-of-type {
     flex-grow: 0.05
-    }
+    }   
 
     .main-nav .nav-keywords-container .keywords-list > *{
     margin-left: 30px;
@@ -446,7 +557,7 @@ align-items: center;
     }
 
         .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 500px));
+        grid-template-columns: repeat(auto-fill, minmax(33.333%, 33.333%));
         
     }
 

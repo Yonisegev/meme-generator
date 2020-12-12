@@ -67,3 +67,10 @@ function onKeywordSearch(ev) {
     filterImagesToShow(elSearchInput);
     renderGallery();
 }
+
+function toggleMenu() {
+    const x = document.querySelector('.menu');
+    x.classList.toggle('opened');
+    document.body.classList.toggle('opened')
+    x.setAttribute('aria-expanded', x.classList.contains('opened'))
+}
