@@ -119,7 +119,7 @@ body.opened .main-screen {
 
 .nav-tabs li a {
     color: white;
-    padding-bottom: 14px;
+    padding-bottom: 0.875rem;
 }
 
 .main-screen {
@@ -242,7 +242,7 @@ body.opened .main-screen {
     flex-wrap: wrap;
     height: min-content;
     transition: opacity .2s ease-in-out;
-    padding-right: 15px;
+    padding-right: 0.9375rem;
 }
 
 .more-keywords > * {
@@ -322,7 +322,7 @@ body.opened .main-screen {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 1.25rem;
     cursor: pointer;
     text-align: right;
 }
@@ -345,7 +345,7 @@ body.opened .main-screen {
 
 }
 .canvas-editor .text-input {
-    height: 60px;
+    height: 3.75rem;
     width: 23.125rem;
     padding-left: 10px;
     font-size: 25px;
@@ -453,8 +453,8 @@ align-items: center;
 .about-section {
     background-color: antiquewhite;
     border-top: 2px solid white;
-    padding: 30px 10px;
-flex-wrap: wrap;
+    padding: 1.875rem 0.625rem;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
@@ -480,7 +480,7 @@ flex-wrap: wrap;
 }
 
 .about-me .about-text {
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
 
 .about-section .about-social a {
@@ -578,7 +578,7 @@ flex-wrap: wrap;
     .main-nav {
         flex-direction: row;
         justify-content: flex-start;
-        padding: 20px 0;
+        padding: 1.25rem 0;
     }
 
     .main-nav .input-container {
@@ -605,7 +605,7 @@ flex-wrap: wrap;
     }   
 
     .main-nav .nav-keywords-container .keywords-list > *{
-    margin-left: 30px;
+    margin-left: 1.875rem;
     }
 
     .about-section {
@@ -653,8 +653,8 @@ flex-wrap: wrap;
     }
 
     .canvas-container {
-        margin-left: 50px;
-        margin-top: 30px;
+        margin-left: 3.125rem;
+        margin-top: 1.875rem;
     }
 }
 
