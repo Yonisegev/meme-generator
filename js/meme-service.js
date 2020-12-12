@@ -49,7 +49,10 @@ function createLine() {
 function deleteLine() {
     if (!gMeme.lines.length) return;
     gMeme.lines.splice(gMeme.selectedLineIdx, 1);
-    if (!gMeme.selectedLineIdx) return;
+    if (!gMeme.selectedLineIdx) {
+        createLine()
+        return;
+    }
     gMeme.selectedLineIdx--
 }
 
@@ -71,6 +74,7 @@ function changeLine() {
         gMeme.selectedLineIdx = 0;
         return;
     }
+    if (!gMeme.lines.length) return;
     gMeme.selectedLineIdx++;
 }
 
