@@ -2,9 +2,6 @@
 
 var gMeme;
 
-
-
-
 gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -112,7 +109,7 @@ function getCurrText() {
 }
 
 function updateMemeData(id) {
-    gMeme.lines.splice(1); // Lines 100 to 103 are for whenever a user selects an images, writes on it, then goes back to gallery and selects another image.
+    gMeme.lines.splice(1); // Lines 113 to 116 are for whenever a user selects an images, writes on it, then goes back to gallery and selects another image.
     gMeme.lines[0].txt = '';
     gMeme.lines[0].color = 'white';
     gMeme.selectedLineIdx = 0;

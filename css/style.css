@@ -8,13 +8,12 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #040a2c;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 
 }
 
 body {
     background-color: antiquewhite;
-    margin: 0 auto;
-
 }
 
 a, a:focus, a:visited a:active {
@@ -230,7 +229,7 @@ body.opened .main-screen {
 .main-nav .nav-keywords-container .keywords-list > *, .more-keywords > *{
     margin: 10px 0px 3px 10px;
     cursor: pointer;
-    transition: all .2s;
+    transition: height .2s;
 }
 
 .keywords-list > *:hover, .more-keywords > *:hover {
@@ -259,9 +258,6 @@ body.opened .main-screen {
     display: flex;
     padding: 0;
     outline: none;
-    /* visibility: hidden;
-    opacity: 0;
-    width: 0; */
 }
 
 .line {
@@ -312,6 +308,7 @@ body.opened .main-screen {
     height: 500px;
     background-color: antiquewhite;
     margin: 15px auto 15px auto;
+    box-shadow: 0px 0px 20px -6px #999;
 
 }
 
@@ -381,6 +378,10 @@ align-items: center;
 
 .canvas-editor .buttons-container button:hover {
     background-color: #FF7F00;
+}
+
+.buttons-container a:hover {
+    color: #ff7f00;
 }
 
 .canvas-editor .buttons-container button:active, a:active {
@@ -569,7 +570,7 @@ flex-wrap: wrap;
 
 .header-tab-active {
     border-bottom: 3px solid black;
-    color: black;
+    color: black !important;
 }
 
 @media (min-width: 812px) {

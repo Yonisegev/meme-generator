@@ -62,7 +62,7 @@ const gImgs = [
 makeKeywords();
 
 function updateKeywordMap(keyword) {
-    ++gKeywordsMap[keyword]
+    ++gKeywordsMap[keyword] // Will update the relevant key's value so the font size can change
 }
 
 function filterImagesToShow(keyword) {

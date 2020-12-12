@@ -35,11 +35,18 @@ function renderKeywords() {
     elDataList.innerHTML = strDataListHTML;
 }
 
-function onClickKeyword(keyword) {
+function onClickKeyword(keyword) { // If user clicked on a keyword
     document.querySelector('input[name="search"]').value = keyword;
     filterImagesToShow(keyword)
     updateKeywordMap(keyword)
     renderKeywords();
+    renderGallery();
+}
+
+function onKeywordSearch(ev) { // If user used input to search for a keyword
+    ev.preventDefault();
+    const elSearchInput = document.querySelector('input[name="search"]').value.toLowerCase().trim()
+    filterImagesToShow(elSearchInput);
     renderGallery();
 }
 
@@ -48,7 +55,7 @@ function onShowMore() {
     const elMoreBtn = document.querySelector('.more-words-btn');
     const elNav = document.querySelector('.main-nav')
     elMoreKeywords.classList.toggle('hide');
-    elNav.classList.toggle('main-nav-height')
+    elNav.classList.toggle('main-nav-height') // keywords nav height will be set to auto, to support more words in the future
     elMoreBtn.innerText = (elMoreBtn.innerText === 'more...') ? 'less...' : 'more...';
 }
 
@@ -61,12 +68,7 @@ function onShowGallery() {
     elEditor.classList.add('hide');
 }
 
-function onKeywordSearch(ev) {
-    ev.preventDefault();
-    const elSearchInput = document.querySelector('input[name="search"]').value.toLowerCase().trim()
-    filterImagesToShow(elSearchInput);
-    renderGallery();
-}
+
 
 function toggleMenu() {
     const x = document.querySelector('.menu');
@@ -78,8 +80,8 @@ function toggleMenu() {
 function onActiveTab(elTab) {
     const elGalleryTab = document.querySelector('.gallery-tab')
     const elAboutTab = document.querySelector('.about-tab');
-    if (elTab === elGalleryTab) {
-        elTab.classList.add('header-tab-active')
+    if (elTab === elGalleryTab || elTab === 'gallery') {
+        elGalleryTab.classList.add('header-tab-active')
         elAboutTab.classList.remove('header-tab-active')
     } else {
         elTab.classList.add('header-tab-active')

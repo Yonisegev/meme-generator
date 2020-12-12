@@ -117,7 +117,7 @@ function drawText(txt, x = 250, y = 80, size, align, color, font) {
     gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = color;
-    if (isNarrow()) {
+    if (isNarrow()) { // On a narrow screen, centered text position will be different (350 / 2)
         x = 175;
 
     }
@@ -134,6 +134,7 @@ function onDeleteLine() {
 
 function onImgSelect(id) {
     document.querySelector('.font-select').selectedIndex = 0; // Reset select input back to default.
+    document.querySelector('#page-start').scrollIntoView();
     updateMemeData(id);
     renderCanvas();
     showEditor();
