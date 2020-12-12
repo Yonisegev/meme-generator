@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./images/doge.png" type="image/x-icon">
 </head>
 
-<body onload="onInit()">
+<body onload="onInit()" id="page-start">
     <div class="main-screen" onclick="toggleMenu()">
         <ul class="clear-list flex narrow-nav-tabs">
             <li><a href="#gallery">Gallery</a></li>
@@ -19,13 +19,14 @@
     </div>
 
     <header class="main-header ">
-        <div class="header-container main-layout flex">
+        <div class="header-container flex">
             <div class="logo-container"><img onclick="onShowGallery()" class="logo-img" src="./images/LOGO.png"
                     alt="Meme Generator"></div>
             <ul class="clear-list flex nav-tabs">
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a onclick="onActiveTab(this)" class="gallery-tab header-tab-active" href="#gallery">Gallery</a>
+                </li>
                 <li>|</li>
-                <li><a href="#about">About</a></li>
+                <li><a onclick="onActiveTab(this)" class="about-tab" href="#about">About</a></li>
             </ul>
 
             <button class="menu" aria-label="Main Menu" onclick="toggleMenu()">
@@ -40,7 +41,7 @@
         </div>
     </header>
 
-    <nav class="main-nav main-layout flex">
+    <nav class="main-nav flex">
         <div class="input-container">
             <form onsubmit="onKeywordSearch(event)">
 
@@ -66,7 +67,7 @@
         </div>
     </nav>
 
-    <section class="editor-container flex main-layout hide">
+    <section class="editor-container flex hide">
         <div class="narrow-back-btn">
             <p onclick="onShowGallery()" class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
         </div>
@@ -103,6 +104,7 @@
                     <select name="font-select" id="font-select" class="font-select" onchange="onFontSelect(this.value)">
                         <option value="Impact">Impact</option>
                         <option value="SuezOne">Suez One</option>
+                        <option value="MontserratBold">Montserrat</option>
                     </select>
                 </div>
 
@@ -120,7 +122,7 @@
         </div>
     </section>
 
-    <main class="gallery-container main-layout" id="gallery">
+    <main class="gallery-container" id="gallery">
 
     </main>
 
@@ -140,12 +142,16 @@
                 </ul>
             </div>
         </div>
+        <div class="top-btn">
+            <a href="#page-start"><i class="fas fa-arrow-up fa-2x"></i></a>
+        </div>
     </section>
 
-    <footer class="main-footer flex flex-column flex-center main-layout">
+    <footer class="main-footer flex flex-column flex-center">
         <div class="footer-logo"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
         <p>All Rights Reserved 2020</p>
     </footer>
+    <script src="./lib/hammerJS/hammer.min.js"></script>
     <script src="./js/gallery-service.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/meme-service.js"></script>

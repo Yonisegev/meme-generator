@@ -64,11 +64,16 @@ select {
     src: url(../fonts/Suez_One/SuezOne-Regular.ttf);
 }
 
-/* LAYOUT  */
-
-.main-layout {
-    margin: 0 auto;
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
+
+@font-face {
+    font-family: MontserratBold;
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
 
 /* HEADER */
 .main-header {
@@ -86,6 +91,13 @@ select {
     user-select: none;
 }
 
+ .logo-img {
+    transition: all .2s;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
 
 .header-container ul:first-of-type {
     flex-grow: 0.35;
@@ -103,6 +115,12 @@ body.opened .main-screen {
 .nav-tabs {
     visibility: hidden;
     opacity: 0;
+    color: white;
+}
+
+.nav-tabs li a {
+    color: white;
+    padding-bottom: 14px;
 }
 
 .main-screen {
@@ -203,6 +221,10 @@ body.opened .main-screen {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+}
+
+.main-nav .keywords-list .more-words-btn {
+    text-decoration: underline;
 }
 
 .main-nav .nav-keywords-container .keywords-list > *, .more-keywords > *{
@@ -431,7 +453,7 @@ align-items: center;
     background-color: antiquewhite;
     border-top: 2px solid white;
     padding: 30px 10px;
-
+flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
@@ -482,6 +504,21 @@ align-items: center;
     line-height: 1.7;
 }
 
+.about-section .top-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex-basis: 100%;
+}
+
+.top-btn i {
+    transform: color .2s;
+}
+
+.top-btn i:hover {
+    color: #ff7f00;
+}
+
 /* FOOTER */
 .main-footer {
     height: 90px;
@@ -528,6 +565,11 @@ align-items: center;
     opacity: 1;
     max-height: initial;
     max-width: initial;
+}
+
+.header-tab-active {
+    border-bottom: 3px solid black;
+    color: black;
 }
 
 @media (min-width: 812px) {

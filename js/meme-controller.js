@@ -8,7 +8,6 @@ function onInit() {
     renderKeywords();
 }
 
-
 function drawImg() {
     let imgData = getImgData();
     let img = new Image();

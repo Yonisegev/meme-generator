@@ -74,3 +74,15 @@ function toggleMenu() {
     document.body.classList.toggle('opened')
     x.setAttribute('aria-expanded', x.classList.contains('opened'))
 }
+
+function onActiveTab(elTab) {
+    const elGalleryTab = document.querySelector('.gallery-tab')
+    const elAboutTab = document.querySelector('.about-tab');
+    if (elTab === elGalleryTab) {
+        elTab.classList.add('header-tab-active')
+        elAboutTab.classList.remove('header-tab-active')
+    } else {
+        elTab.classList.add('header-tab-active')
+        elGalleryTab.classList.remove('header-tab-active');
+    }
+}
