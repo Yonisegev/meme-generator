@@ -106,7 +106,7 @@ a, a:focus, a:visited a:active {
     list-style-type: none;
 }
 
-@media (min-width: 891px) {
+@media (min-width: 768px) {
     .main-welcome {
         max-width: 85vw;
     }
