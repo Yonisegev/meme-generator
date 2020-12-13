@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url('../images/landing-bg/001.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    line-height: 1.8;
+}
+
+a, a:focus, a:visited a:active {
+    cursor: pointer;
+    color: initial;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+.main-welcome {
+    max-width: 60vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.landing-heading {
+    font-size: 4.5rem;
+}
+
+.landing-subheading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-welcome .landing-subheading span {
+    border-bottom: 2px solid white;
+}
+
+.main-welcome .cta-btn {
+    font-size: 1.5rem;
+    border: 1px solid  #ff7f00;
+    border-radius: 2em;
+    padding: 10px 20px;
+    background-color: rgba(255, 69, 0, 0.9);
+    text-align: center;
+    box-shadow: 0px 0px 20px -6px #999;
+
+    transition: all .2s;
+}
+
+.main-welcome .cta-btn:hover {
+    box-shadow: 0px 0px 20px 6px #999;
+    transform: translateY(-5px);
+
+}
+
+.main-welcome .cta-btn > * {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.cta-btn i {
+    margin-left: 1px;
+}
+
+
+/* HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.clear-list {
+    list-style-type: none;
+}
