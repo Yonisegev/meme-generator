@@ -5,158 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator - Yoni Segev</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/landing.css">
     <link rel="shortcut icon" href="./images/doge.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
-<body onload="onInit()" id="page-start">
-    <div class="main-screen" onclick="toggleMenu()">
-        <ul class="clear-list flex narrow-nav-tabs">
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </div>
-
-    <header class="main-header ">
-        <div class="header-container flex">
-            <div class="logo-container"><img onclick="onShowGallery()" class="logo-img" src="./images/LOGO.png"
-                    alt="Meme Generator"></div>
-            <ul class="clear-list flex nav-tabs">
-                <li><a onclick="onActiveTab(this)" class="gallery-tab header-tab-active" href="#gallery">Gallery</a>
-                </li>
-                <li>|</li>
-                <li><a onclick="onActiveTab(this)" class="about-tab" href="#about">About</a></li>
-            </ul>
-
-            <button class="menu" aria-label="Main Menu" onclick="toggleMenu()">
-                <svg width="100" height="50" viewBox="0 0 100 100">
-                    <path class="line line1"
-                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                    <path class="line line2" d="M 20,50 H 80" />
-                    <path class="line line3"
-                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <nav class="main-nav flex">
-        <div class="input-container">
-            <form onsubmit="onKeywordSearch(event)">
-
-
-                <input list="keywords" type="search" name="search" id="search"
-                    placeholder="Enter search keyword"><span><i onclick="onKeywordSearch(event)"
-                        class="fas fa-search"></i></span>
-                <div>
-                    <datalist id="keywords" class="data-list">
-
-                    </datalist>
-            </form>
-        </div>
-
-        </div>
-        <div class="nav-keywords-container">
-            <ul class="keywords-list flex clear-list">
-
-            </ul>
-            <div class="more-keywords hide flex clear-list">
-
-            </div>
-        </div>
-    </nav>
-
-    <section class="editor-container flex hide">
-        <div class="narrow-back-btn">
-            <p onclick="onShowGallery()" class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
-        </div>
-        <div class="canvas-container">
-            <canvas id="canvas" height="500px" width="500px"></canvas>
-        </div>
-        <div class="canvas-editor flex flex-column">
-            <div class="wide-back-btn">
-                <p onclick="onShowGallery()" class="back-gallery">Gallery <i class="fas fa-angle-right"></i></p>
-            </div>
-            <input oninput="onUpdateCanvasText(this)" class="text-input" type="text" name="text" id="text"
-                placeholder="Your text here">
-            <div class="buttons-container">
-                <div class="first-row">
-                    <button onclick="onChangeLine()"><i class="fas fa-exchange-alt fa-3x change-line"></i></button>
-                    <button onclick="onDeleteLine()"><i class="far fa-trash-alt fa-3x delete"></i></button>
-                    <button onclick="onAddLine()"><i class="far fa-comment-dots fa-3x new-line"></i></button>
-                </div>
-                <div class="second-row">
-                    <button onclick="onChangeFontSize('+')"><i class="far fa-plus-square fa-3x font-plus"></i></button>
-                    <button onclick="onChangeFontSize('-')"><i
-                            class="far fa-minus-square fa-3x font-minus"></i></button>
-                    <button onclick="onAlign('right')"><i class="fas fa-align-left fa-3x align-left"></i></button>
-                    <button onclick="onAlign('center')"><i class="fas fa-align-center fa-3x align-center"></i></button>
-                    <button onclick="onAlign('left')"><i class="fas fa-align-right fa-3x align-right"></i></button>
-                </div>
-                <div class="third-row">
-                    <button onclick="onChangeTextPosY('+')"><i class="fas fa-arrow-up fa-3x move-up"></i></button>
-                    <button onclick="onChangeTextPosY('-')"><i class="fas fa-arrow-down fa-3x move-down"></i></button>
-                    <button onclick="onColorClick()"><i class="fas fa-palette fa-3x"></i><input type="color" id="color"
-                            class="hide color-pal"></button>
-                </div>
-                <div class="fourth-row">
-                    <select name="font-select" id="font-select" class="font-select" onchange="onFontSelect(this.value)">
-                        <option value="Impact">Impact</option>
-                        <option value="SuezOne">Suez One</option>
-                        <option value="MontserratBold">Montserrat</option>
-                    </select>
-                </div>
-
-                <div class="fifth-row">
-                    <a onclick="onSaveCanvas(this)" href="#" download=""><i class="fas fa-download fa-3x"></i></a>
-                    <form class="share-form" onsubmit="uploadAndShare(this, event)" action="" method="POST"
-                        enctype="multipart/form-data">
-                        <input name="img" id="imgData" type="hidden" />
-                        <button><i class="fas fa-share-square fa-3x"></i></button>
-                    </form>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-    <main class="gallery-container" id="gallery">
-
+<body>
+    <main class="main-welcome flex flex-center flex-column">
+        <h1 class="landing-heading">Meme Generator</h1>
+        <p class="landing-subheading">Make unique and custom memes in an <span>instant</span>. No design skills needed.
+        </p>
+        <a href="main.html" class="cta-btn">
+            <p>Design your own meme now</p>
+            <i class="fas fa-arrow-right fa-align-center"></i>
+        </a>
     </main>
-
-    <section class="about-section flex" id="about">
-        <div class="my-img flex"><img src="./images/about/001.png"></div>
-        <div class="about-me flex flex-column">
-            <p class="about-name">Yehonathan Segev</p>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <div class="about-social">
-                <ul class="flex clear-list">
-                    <a href="https://www.facebook.com/Segev.Yoni/" target="_blank"
-                        class="social-logo fab fa-facebook fa-2x"></a>
-                    <a href="https://www.linkedin.com/in/yehonathan-segev-743a431a5/" target="_blank"
-                        class="social-logo fab fa-linkedin-in fa-2x"></a>
-                    <a href="https://github.com/Yonisegev" target="_blank" class="social-logo fab fa-github fa-2x">
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <div class="top-btn">
-            <a href="#page-start" onclick="onActiveTab('gallery')"><i class="fas fa-arrow-up fa-2x"></i></a>
-        </div>
-    </section>
-
-    <footer class="main-footer flex flex-column flex-center">
-        <div class="footer-logo"><img class="logo-img" src="./images/LOGO.png" alt="Meme Generator"></div>
-        <p>&copy; All Rights Reserved 2020</p>
-    </footer>
-    <script src="./lib/hammerJS/hammer.min.js"></script>
-    <script src="./js/gallery-service.js"></script>
-    <script src="./js/utils.js"></script>
-    <script src="./js/meme-service.js"></script>
-    <script src="./js/gallery-controller.js"></script>
-    <script src="./js/meme-controller.js"></script>
 </body>
 
 </html>
